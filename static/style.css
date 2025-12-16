@@ -1,0 +1,382 @@
+
+/* Centered Form Container for Login, Signup, and Forgot Password */
+.center {
+    width: 360px;
+    background: #ffffff; /* White background for forms */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+}
+
+/* Input Fields */
+.txt_field {
+    position: relative;
+    margin: 20px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px;
+    background: #f9f9f9; /* Light grey background for inputs */
+    outline: none;
+    font-size: 16px;
+    color: #333; /* Dark grey text */
+}
+
+.txt_field input:focus {
+    border-color: #3498db; /* Blue border on focus */
+    background: #fff; /* White background on focus */
+}
+
+/* Labels */
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333; /* Dark black for labels */
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: 5px;
+    font-size: 12px;
+    color: #3498db; /* Blue label text when focused or valid */
+}
+
+/* Submit Button */
+input[type="submit"] {
+    width: 100%;
+    background: #3498db; /* Blue button */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #2980b9; /* Darker blue on hover */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #3498db; /* Blue links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Full-Page Container for Workout Suggestion and Chatbot */
+.full-page-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Workout Suggestion Page */
+.workout-suggestion {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background: #ffffff; /* White background for the form */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+}
+
+.workout-suggestion h1 {
+    color: #333; /* Dark grey for headings */
+    margin-bottom: 20px;
+}
+
+.workout-suggestion form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.workout-suggestion .txt_field {
+    position: relative;
+    margin: 15px 0;
+}
+
+.workout-suggestion .txt_field input,
+.workout-suggestion .txt_field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px;
+    background: #f9f9f9; /* Light grey background for inputs */
+    outline: none;
+    font-size: 16px;
+    color: #333; /* Dark grey text */
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+}
+
+/* Custom Dropdown Container */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.custom-dropdown .selected-option {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px;
+    background: #f9f9f9; /* Light grey background */
+    font-size: 16px;
+    color: #333; /* Dark grey text */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-dropdown .selected-option::after {
+    content: "▼";
+    font-size: 12px;
+    color: #333; /* Dark grey for arrow */
+}
+
+.custom-dropdown .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff; /* White background for options */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+.custom-dropdown .options.show {
+    display: block; /* Show options when dropdown is active */
+}
+
+.custom-dropdown .options div {
+    padding: 10px;
+    cursor: pointer;
+    color: #333; /* Dark grey text */
+}
+
+.custom-dropdown .options div:hover {
+    background: #f9f9f9; /* Light grey background on hover */
+}
+
+.workout-suggestion input[type="submit"] {
+    width: 100%;
+    background: #3498db; /* Blue button */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.workout-suggestion input[type="submit"]:hover {
+    background: #2980b9; /* Darker blue on hover */
+}
+
+.workout-suggestions {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.workout-suggestions h2 {
+    color: #333; /* Dark grey for headings */
+    margin-bottom: 10px;
+}
+
+.workout-suggestions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.workout-suggestions li {
+    background: #f9f9f9; /* Light grey background for list items */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+}
+
+.workout-suggestions li strong {
+    color: #3498db; /* Blue for exercise names */
+}
+
+/* Chatbot Page */
+.chat-container {
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    background: #ffffff; /* White background for chat container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-container h1 {
+    color: #333; /* Dark grey for headings */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#chatbox {
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9; /* Light grey background for chatbox */
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user {
+    background: #3498db; /* Blue for user messages */
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+    border-bottom-right-radius: 0;
+}
+
+.bot {
+    background: #e0e0e0; /* Light grey for bot messages */
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.error {
+    background: #e74c3c; /* Red for error messages */
+    color: white;
+    align-self: center;
+    text-align: center;
+}
+
+.input-area {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f9f9f9; /* Light grey background for input */
+    color: #333; /* Dark grey text */
+}
+
+.input-area button {
+    padding: 10px 15px;
+    background: #3498db; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-area button:hover {
+    background: #2980b9; /* Darker blue on hover */
+}
+
+.logout-btn {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #e74c3c; /* Red for logout button */
+    font-weight: bold;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    background: #111;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-logout {
+    color: white;
+    text-decoration: none;
+    background: #e74c3c;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.left-panel,
+.right-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.google-btn{
+  display:block;
+  text-align:center;
+  padding:10px;
+  margin-top:15px;
+  background:#db4437;
+  color:white;
+  border-radius:5px;
+  text-decoration:none;
+}

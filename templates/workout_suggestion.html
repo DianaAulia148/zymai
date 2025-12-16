@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workout Suggestion | Fitness Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="full-page-container">
+        <div class="workout-suggestion">
+            <h1>Workout Suggestion</h1>
+            <form method="post" action="{{ url_for('workout_suggestion') }}">
+                <!-- Custom Dropdown for Goal -->
+                <div class="txt_field">
+                    <label>Select Your Goal</label>
+                    <div class="custom-dropdown">
+                        <div class="selected-option" onclick="toggleDropdown('goal')">
+                            <span id="goal-selected">Select Goal</span>
+                        </div>
+                        <div class="options" id="goal-options">
+                            <div onclick="selectOption('goal', 'Muscle Gain')">Muscle Gain</div>
+                            <div onclick="selectOption('goal', 'Fat Loss')">Fat Loss</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Dropdown for Target Muscle -->
+                <div class="txt_field">
+                    <label>Select Target Muscle</label>
+                    <div class="custom-dropdown">
+                        <div class="selected-option" onclick="toggleDropdown('target_muscle')">
+                            <span id="target_muscle-selected">Select Target Muscle</span>
+                        </div>
+                        <div class="options" id="target_muscle-options">
+                            <div onclick="selectOption('target_muscle', 'Full Body')">Full Body</div>
+                            <div onclick="selectOption('target_muscle', 'Legs')">Legs</div>
+                            <div onclick="selectOption('target_muscle', 'Chest')">Chest</div>
+                            <div onclick="selectOption('target_muscle', 'Back')">Back</div>
+                            <div onclick="selectOption('target_muscle', 'Shoulders')">Shoulders</div>
+                            <div onclick="selectOption('target_muscle', 'Abs')">Abs</div>
+                            <div onclick="selectOption('target_muscle', 'Biceps')">Biceps</div>
+                            <div onclick="selectOption('target_muscle', 'Triceps')">Triceps</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Dropdown for Location -->
+                <div class="txt_field">
+                    <label>Select Location</label>
+                    <div class="custom-dropdown">
+                        <div class="selected-option" onclick="toggleDropdown('location')">
+                            <span id="location-selected">Select Location</span>
+                        </div>
+                        <div class="options" id="location-options">
+                            <div onclick="selectOption('location', 'Gym')">Gym</div>
+                            <div onclick="selectOption('location', 'Home')">Home</div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Get Workout Suggestions">
+            </form>
+
+            {% if workouts %}
+                <div class="workout-suggestions">
+                    <h2>Your Workout Suggestions for {{ goal.replace('_', ' ').title() }} ({{ location.title() }}):</h2>
+                    <ul>
+                        {% for workout in workouts %}
+                            <li>
+                                <strong>{{ workout.exercise }}</strong><br>
+                                Target: {{ workout.target }}<br>
+                                {% if workout.reps %}
+                                    Reps: {{ workout.reps }}
+                                {% elif workout.duration %}
+                                    Duration: {{ workout.duration }}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <a href="{{ url_for('chatbot') }}" class="logout-btn">Go to Chatbot</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle dropdown visibility
+        function toggleDropdown(id) {
+            const options = document.getElementById(`${id}-options`);
+            options.classList.toggle("show");
+        }
+
+        // Function to select an option
+        function selectOption(dropdownId, value) {
+            const selectedOption = document.getElementById(`${dropdownId}-selected`);
+            selectedOption.textContent = value;
+            const options = document.getElementById(`${dropdownId}-options`);
+            options.classList.remove("show");
+
+            // Set the selected value in a hidden input for form submission
+            const hiddenInput = document.createElement("input");
+            hiddenInput.type = "hidden";
+            hiddenInput.name = dropdownId;
+            hiddenInput.value = value;
+            document.querySelector("form").appendChild(hiddenInput);
+        }
+
+        // Close dropdowns when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.matches(".selected-option")) {
+                const dropdowns = document.querySelectorAll(".options");
+                dropdowns.forEach((dropdown) => {
+                    if (dropdown.classList.contains("show")) {
+                        dropdown.classList.remove("show");
+                    }
+                });
+            }
+        };
+    </script>
+</body>
+</html>

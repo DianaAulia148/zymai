@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYM Ai - Virtual Asisten Trainer GYM Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- File CSS Eksternal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<div id="toast" class="toast">
+    <div class="toast-icon">
+        <i class="fas fa-info"></i>
+    </div>
+    <span id="toast-message">Notification</span>
+</div>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-orb orb1"></div>
+        <div class="floating-orb orb2"></div>
+        <div class="floating-orb orb3"></div>
+    </div>
+
+   <!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="static\images\Desain tanpa judul-modified.png" alt="ZYM Logo" style="height:40px; margin-right:10px;">
+            Zym Ai Mobile
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#TESTIMONI">testimonial</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+         <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+
+
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">CAPSTONE PROJECT</span>
+                <h1>Elevate Your Fitness Journey with<h1>
+                <h1><span class="gradient-text"> Virtual Asisten Trainer Gym Digital</span></h1>
+                <p>ZYM AI menghadirkan pelatih gym digital berbasis kecerdasan buatan yang mampu memonitor gerakan, memberikan koreksi secara real-time, serta mempersonalisasi latihan Anda. Solusi modern untuk latihan yang lebih aman, efektif, dan efisien.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary" onclick="showToast('ON PROGRES')">
+                          Mulai Uji Coba Gratis
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn-secondary" onclick="showToast('ON PROGRES')">
+                        <i class="fas fa-play"></i>
+                         Lihat Demo
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 1rem;">Core Technologies</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon icon-ai">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600;">AI Engine</div>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">Neural Networks</div>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon icon-cloud">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600;">Web Server</div>
+                                <div style="font-size: 0.875rem; color: var(--text-secondary);">Apache</div>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon icon-quantum">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                           <div>
+    <div style="font-weight: 600;">Framework</div>
+    <ul style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem 0 0 1rem; padding: 0;">
+        <li>Flask for Web</li>
+        <li>Flutter for Mobile</li>
+    </ul>
+</div>
+
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon icon-blockchain">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div>
+                               <div style="font-weight: 600;">Library</div>
+    <ul style="font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem 0 0 1rem; padding: 0;">
+        <li>MediaPipe Pose</li>
+        <li>OpenCV</li>
+    </ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Animated Wave Background -->
+<svg class="bg-waves" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+
+    <defs>
+        <linearGradient id="bgGradient">
+            <stop offset="0%" style="stop-color:#fff"></stop>
+            <stop offset="50%" style="stop-color:#fff"></stop>
+            <stop offset="100%" style="stop-color:#fff"></stop>
+        </linearGradient>
+
+        <path id="bgWave" fill="url(#bgGradient)"
+            d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+            s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859
+            s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+    </defs>
+
+    <g>
+        <use xlink:href="#bgWave" opacity=".3">
+            <animateTransform attributeName="transform" type="translate"
+                dur="10s" values="270 230; -334 180; 270 230"
+                repeatCount="indefinite" />
+        </use>
+
+        <use xlink:href="#bgWave" opacity=".6">
+            <animateTransform attributeName="transform" type="translate"
+                dur="8s" values="-270 230; 243 220; -270 230"
+                repeatCount="indefinite" />
+        </use>
+
+        <use xlink:href="#bgWave" opacity=".9">
+            <animateTransform attributeName="transform" type="translate"
+                dur="6s" values="0 230; -140 200; 0 230"
+                repeatCount="indefinite" />
+        </use>
+    </g>
+</svg>
+
+<div class="container">
+    <div class="left-panel">
+        {% include 'workout_suggestion.html' %}
+    </div>
+
+    <div class="right-panel">
+        {% include 'chatbot.html' %}
+    </div>
+</div>
+
+
+<!-- FEEDBACK RESULT SECTION -->
+<section class="feedback-result group" id="feedbackResult">
+    <div class="container">
+        <div class="section-header">
+            <h2>USER <span class="gradient-text"> FEEDBACK</span></h2>
+            <p>All feedback submitted will appear here in real-time</p>
+        </div>
+
+        <div class="stats-card">
+    <div class="stat-item">
+        <i class="fa-solid fa-star stat-icon"></i>
+        <h2 id="statRating" class="stat-number" data-decimal="1">0</h2>
+        <p>Average Rating</p>
+    </div>
+
+    <div class="stat-item">
+        <i class="fa-sharp fa-solid fa-users stat-icon"></i>
+        <h2 id="statReviews" class="stat-number" data-decimal="0">0</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <div class="stat-item">
+        <i class="fa-sharp fa-solid fa-award stat-icon"></i>
+        <h2 id="statFiveStars" class="stat-number" data-decimal="0">0</h2>
+        <p>Five Star Reviews</p>
+    </div>
+</div>
+                <!-- LIST FEEDBACK SCROLL -->
+        <div class="feedback-list animate-scroll-t2b group-hover-pause feedback-wrapper group-hover-pause carousel-container" id="feedbackList">
+            <div id="feedbackList" class=" animate-scrol"><!-- Data dari database otomatis tampil -->
+        </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEEDBACK FORM SECTION -->
+
+<section class="feedback">
+    <div class="container">
+        <div class="section-header">
+            <h2><span class="gradient-text">SHARE</span> YOUR FEEDBACK</h2>
+            <p>Your opinion helps us improve and build a better experience</p>
+        </div>
+
+        <form class="feedback-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Rating</label>
+
+                <div class="star-rating">
+                    <i class="fas fa-star" data-value="1"></i>
+                    <i class="fas fa-star" data-value="2"></i>
+                    <i class="fas fa-star" data-value="3"></i>
+                    <i class="fas fa-star" data-value="4"></i>
+                    <i class="fas fa-star" data-value="5"></i>
+                </div>
+
+                <input type="hidden" id="rating" name="rating">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Feedback</label>
+                <textarea id="message" rows="5" placeholder="Write your feedback here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary"onclick="showToast('LOGIN TERLEBIH DAHULU')">
+                Submit Feedback  
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ZYM AI DIGITAL</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Pioneering the future of technology with innovative solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>FITUR</h3>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Status Page</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NexusTech. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="toast-message" id="toastMessage">Action completed!</div>
+    </div>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animated counter for stats
+        const animateCounter = (element) => {
+            const target = parseFloat(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = current.toFixed(1);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target % 1 === 0 ? target : target.toFixed(1);
+                }
+            };
+
+            updateCounter();
+        };
+
+    
+const toast = document.getElementById('toast');
+const toastMessage = document.getElementById('toast-message');
+
+function showToast(message) {
+    toastMessage.textContent = message;
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
+            navLinks.style.padding = '1rem';
+            navLinks.style.borderTop = '1px solid var(--glass-border)';
+        }
+
+        // Parallax effect for hero section (fixed)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                // Reduced parallax effect and opacity change for smoother experience
+                heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+                heroContent.style.opacity = Math.max(0, 1 - scrolled / 1200);
+            }
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.feature-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic year in footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const year = new Date().getFullYear();
+            const footerYear = document.querySelector('.footer-bottom p');
+            if (footerYear) {
+                footerYear.innerHTML = footerYear.innerHTML.replace('2025', year);
+            }
+        });
+
+     
+document.querySelector('.feedback-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const message = document.getElementById('message')?.value.trim();
+    const rating = document.getElementById('rating')?.value;
+
+    // 1️⃣ VALIDASI FIELD (WAJIB PERTAMA)
+    if (!name || !email || !message || !rating) {
+        showToast('Harap lengkapi semua data feedback');
+        return;
+    }
+
+    // 2️⃣ CEK LOGIN (SETELAH FORM LENGKAP)
+    const isLoggedIn = {{ 'true' if session.get('user_id') else 'false' }};
+    if (!isLoggedIn) {
+        showToast('LOGIN TERLEBIH DAHULU');
+        return;
+    }
+
+    // 3️⃣ SUBMIT FEEDBACK
+    fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, rating })
+    })
+    .then(res => res.json())
+    .then(res => {
+        showToast(res.message || 'Feedback berhasil dikirim');
+        document.querySelector('.feedback-form').reset();
+    })
+    .catch(() => {
+        showToast('Terjadi kesalahan, silakan coba lagi');
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".about-text, .about-list li");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+    const stars = document.querySelectorAll(".star-rating i");
+    const ratingInput = document.getElementById("rating");
+
+    stars.forEach((star, index) => {
+        star.addEventListener("mouseover", () => {
+            stars.forEach((s, i) => s.classList.toggle("hovered", i <= index));
+        });
+
+        star.addEventListener("mouseout", () => {
+            stars.forEach(s => s.classList.remove("hovered"));
+        });
+
+        star.addEventListener("click", () => {
+            const ratingValue = star.getAttribute("data-value");
+            ratingInput.value = ratingValue;
+
+            stars.forEach((s, i) => {
+                s.classList.toggle("active", i < ratingValue);
+            });
+        });
+    });
+    // ============== LOAD FEEDBACK FROM DATABASE =================
+let autoScrollInterval;
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+// ================== CREATE CARD ==================
+function createCardHTML(fb) {
+    const stars = "★".repeat(Number(fb.rating || 0)) +
+                  "☆".repeat(5 - Number(fb.rating || 0));
+
+    return `
+      <div class="feedback-card">
+        <h3>${escapeHtml(fb.name)}</h3>
+        <p class="email">${escapeHtml(fb.email)}</p>
+        <div class="stars">${stars}</div>
+        <p class="msg">${escapeHtml(fb.message)}</p>
+      </div>
+    `;
+}
+
+// Escape HTML
+function escapeHtml(str) {
+    return (str || "").replace(/[&<>"']/g, m =>
+        ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[m])
+    );
+}
+
+// ================== LOAD FEEDBACK ==================
+async function loadCarousel() {
+    const container = document.getElementById("feedbackList");
+
+    const res = await fetch("/api/feedback/latest");
+    const data = await res.json();
+
+    let html = "";
+    data.slice(0,10).forEach(fb => html += createCardHTML(fb));
+
+    // Set isi pertama
+    container.innerHTML = html;
+
+    // Gandakan minimal 2x (di sini 3x supaya super stabil)
+    container.innerHTML += html + html;
+
+    startAutoScroll();
+}
+
+// ================== AUTO SCROLL TAK TERBATAS ==================
+function startAutoScroll() {
+    const container = document.getElementById("feedbackList");
+    const resetPoint = container.scrollWidth / 3;  // karena 3x duplikasi
+
+    clearInterval(autoScrollInterval);
+
+    autoScrollInterval = setInterval(() => {
+
+        container.scrollLeft += 1; // kecepatan
+
+        // RESET sebelum mencapai batas (prevent glitch)
+        if (container.scrollLeft >= resetPoint) {
+            container.scrollLeft = 0;
+        }
+
+    }, 16); // ±60fps
+}
+
+// ================== DRAG SCROLL ==================
+function initDragScroll() {
+    const container = document.getElementById("feedbackList");
+
+    container.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        clearInterval(autoScrollInterval);
+    });
+
+    container.addEventListener("mouseleave", () => {
+        if (isDragging) restartAutoScroll();
+        isDragging = false;
+    });
+
+    container.addEventListener("mouseup", () => {
+        isDragging = false;
+        restartAutoScroll();
+    });
+
+    container.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        container.scrollLeft = scrollLeft - walk;
+    });
+}
+
+function restartAutoScroll() {
+    setTimeout(startAutoScroll, 800);
+}
+
+// ================== INIT ==================
+document.addEventListener("DOMContentLoaded", () => {
+    loadCarousel();
+    initDragScroll();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Ambil data stat dari API
+    async function fetchStats() {
+        const res = await fetch("/api/feedback/summary");
+        const data = await res.json();
+
+        return {
+            rating: parseFloat(data.avg_rating),
+            reviews: Number(data.total_reviews),
+            fiveStars: Number(data.r5)
+        };
+    }
+
+    // Animasi angka halus
+    function animateCounter(el, target, decimalPlaces = 0, duration = 2000) {
+        const start = 0;
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const value = start + (target - start) * progress;
+
+            // Format angka desimal & thousand separator
+            if (decimalPlaces > 0) {
+                el.textContent = value.toFixed(decimalPlaces);
+            } else {
+                el.textContent = new Intl.NumberFormat().format(Math.floor(value));
+            }
+
+            if (progress < 1) requestAnimationFrame(update);
+        };
+
+        requestAnimationFrame(update);
+    }
+
+    async function setupStats() {
+        const stats = await fetchStats();  // fetch API once
+
+        const statElements = [
+            { el: document.getElementById("statRating"), value: stats.rating },
+            { el: document.getElementById("statReviews"), value: stats.reviews },
+            { el: document.getElementById("statFiveStars"), value: stats.fiveStars }
+        ];
+
+        // Observer untuk memulai animasi saat masuk viewport
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const decimalPlaces = parseInt(element.getAttribute("data-decimal") || 0);
+                    const targetVal = statElements.find(s => s.el === element).value;
+
+                    animateCounter(element, targetVal, decimalPlaces);
+                    obs.unobserve(element);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        statElements.forEach(s => observer.observe(s.el));
+    }
+
+    setupStats();
+});
+
+    </script>
+</body>
+</html>

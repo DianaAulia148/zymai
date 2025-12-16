@@ -1,0 +1,758 @@
+{
+    "Gym": {
+      "Muscle Gain": {
+        "Full Body": [
+          {
+            "exercise": "Barbell Squat",
+            "target": "Legs",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Bench Press",
+            "target": "Chest",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Bent Over Row",
+            "target": "Back",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Overhead Press",
+            "target": "Shoulders",
+            "reps": "3 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Deadlift",
+            "target": "Full Body",
+            "reps": "3 sets of 6-10 reps"
+          }
+        ],
+        "Legs": [
+          {
+            "exercise": "Barbell Squat",
+            "target": "Quads/Glutes",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Romanian Deadlift",
+            "target": "Hamstrings",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Leg Press",
+            "target": "Quads/Glutes",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Leg Curl",
+            "target": "Hamstrings",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Calf Raises",
+            "target": "Calves",
+            "reps": "4 sets of 15-20 reps"
+          }
+        ],
+        "Chest": [
+          {
+            "exercise": "Bench Press",
+            "target": "Chest",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Incline Dumbbell Press",
+            "target": "Upper Chest",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Cable Fly",
+            "target": "Chest",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Dips",
+            "target": "Lower Chest/Triceps",
+            "reps": "3 sets of 8-12 reps"
+          }
+        ],
+        "Back": [
+          {
+            "exercise": "Pull-ups",
+            "target": "Upper Back/Lats",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Bent Over Row",
+            "target": "Middle Back",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Lat Pulldown",
+            "target": "Lats",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Seated Cable Row",
+            "target": "Mid Back",
+            "reps": "3 sets of 10-15 reps"
+          }
+        ],
+        "Shoulders": [
+          {
+            "exercise": "Overhead Press",
+            "target": "Shoulders",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Lateral Raises",
+            "target": "Side Delts",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Face Pulls",
+            "target": "Rear Delts",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Front Raises",
+            "target": "Front Delts",
+            "reps": "3 sets of 10-15 reps"
+          }
+        ],
+        "Abs": [
+          {
+            "exercise": "Cable Crunch",
+            "target": "Abs",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Hanging Leg Raise",
+            "target": "Lower Abs",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Ab Wheel Rollout",
+            "target": "Full Abs",
+            "reps": "3 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Russian Twist",
+            "target": "Obliques",
+            "reps": "3 sets of 15-20 reps each side"
+          }
+        ],
+        "Biceps": [
+          {
+            "exercise": "Barbell Curl",
+            "target": "Biceps",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Hammer Curl",
+            "target": "Brachialis/Biceps",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Incline Dumbbell Curl",
+            "target": "Long Head",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Cable Curl",
+            "target": "Biceps",
+            "reps": "3 sets of 12-15 reps"
+          }
+        ],
+        "Triceps": [
+          {
+            "exercise": "Close Grip Bench Press",
+            "target": "Triceps",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Tricep Pushdown",
+            "target": "Triceps",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Overhead Tricep Extension",
+            "target": "Long Head",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Dips",
+            "target": "Triceps/Chest",
+            "reps": "3 sets of 8-12 reps"
+          }
+        ]
+      },
+      "Fat Loss": {
+        "Full Body": [
+          {
+            "exercise": "Barbell Squat",
+            "target": "Legs",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Push-ups",
+            "target": "Chest/Triceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Bent Over Row",
+            "target": "Back",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Burpees",
+            "target": "Full Body",
+            "duration": "30 seconds on, 15 seconds off, 4 rounds"
+          },
+          {
+            "exercise": "Mountain Climbers",
+            "target": "Core/Cardio",
+            "duration": "30 seconds on, 15 seconds off, 4 rounds"
+          }
+        ],
+        "Legs": [
+          {
+            "exercise": "Squat Jumps",
+            "target": "Quads/Glutes",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Walking Lunges",
+            "target": "Quads/Glutes",
+            "reps": "3 sets of 20 steps each leg"
+          },
+          {
+            "exercise": "Box Jumps",
+            "target": "Legs/Cardio",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Romanian Deadlift",
+            "target": "Hamstrings",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Leg Press (Light weight, high reps)",
+            "target": "Quads/Glutes",
+            "reps": "3 sets of 20-25 reps"
+          }
+        ],
+        "Chest": [
+          {
+            "exercise": "Bench Press (Light weight, high reps)",
+            "target": "Chest",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Incline Push-ups",
+            "target": "Upper Chest",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Chest Fly",
+            "target": "Chest",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Push-up to Burpee",
+            "target": "Chest/Cardio",
+            "reps": "3 sets of 10-12 reps"
+          }
+        ],
+        "Back": [
+          {
+            "exercise": "Pull-ups",
+            "target": "Upper Back/Lats",
+            "reps": "3 sets of max reps"
+          },
+          {
+            "exercise": "Bent Over Row (Light weight, high reps)",
+            "target": "Middle Back",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Renegade Rows",
+            "target": "Back/Core",
+            "reps": "3 sets of 10-12 each arm"
+          },
+          {
+            "exercise": "Lat Pulldown",
+            "target": "Lats",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ],
+        "Shoulders": [
+          {
+            "exercise": "Shoulder Press (Light weight, high reps)",
+            "target": "Shoulders",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Lateral Raises",
+            "target": "Side Delts",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Front Raises",
+            "target": "Front Delts",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Pike Push-ups",
+            "target": "Shoulders",
+            "reps": "3 sets of 12-15 reps"
+          }
+        ],
+        "Abs": [
+          {
+            "exercise": "Mountain Climbers",
+            "target": "Core/Cardio",
+            "duration": "45 seconds on, 15 seconds off, 4 rounds"
+          },
+          {
+            "exercise": "Russian Twists",
+            "target": "Obliques",
+            "reps": "3 sets of 20 reps each side"
+          },
+          {
+            "exercise": "Plank",
+            "target": "Core",
+            "duration": "3 sets of 45-60 seconds"
+          },
+          {
+            "exercise": "Bicycle Crunches",
+            "target": "Abs/Obliques",
+            "reps": "3 sets of 20-30 reps"
+          }
+        ],
+        "Biceps": [
+          {
+            "exercise": "Barbell Curl (Light weight, high reps)",
+            "target": "Biceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Hammer Curl",
+            "target": "Brachialis/Biceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Chin-ups",
+            "target": "Biceps/Back",
+            "reps": "3 sets of max reps"
+          },
+          {
+            "exercise": "Alternating Curls",
+            "target": "Biceps",
+            "reps": "3 sets of 20 reps (10 each arm)"
+          }
+        ],
+        "Triceps": [
+          {
+            "exercise": "Diamond Push-ups",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Tricep Dips",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Overhead Tricep Extension",
+            "target": "Long Head",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Tricep Pushdown",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ]
+      }
+    },
+    "Home": {
+      "Muscle Gain": {
+        "Full Body": [
+          {
+            "exercise": "Push-ups",
+            "target": "Chest/Triceps",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Bodyweight Squats",
+            "target": "Legs",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Pull-ups (or Inverted Rows)",
+            "target": "Back/Biceps",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Pike Push-ups",
+            "target": "Shoulders",
+            "reps": "3 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Glute Bridges",
+            "target": "Glutes/Hamstrings",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ],
+        "Legs": [
+          {
+            "exercise": "Bodyweight Squats",
+            "target": "Quads/Glutes",
+            "reps": "4 sets of 20-30 reps"
+          },
+          {
+            "exercise": "Lunges",
+            "target": "Quads/Glutes",
+            "reps": "4 sets of 12-15 reps each leg"
+          },
+          {
+            "exercise": "Single-Leg Romanian Deadlift",
+            "target": "Hamstrings",
+            "reps": "3 sets of 10-15 reps each leg"
+          },
+          {
+            "exercise": "Glute Bridges",
+            "target": "Glutes",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Calf Raises",
+            "target": "Calves",
+            "reps": "4 sets of 20-25 reps"
+          }
+        ],
+        "Chest": [
+          {
+            "exercise": "Push-ups",
+            "target": "Chest/Triceps",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Incline Push-ups",
+            "target": "Upper Chest",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Decline Push-ups",
+            "target": "Lower Chest",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Diamond Push-ups",
+            "target": "Inner Chest/Triceps",
+            "reps": "3 sets of 10-15 reps"
+          }
+        ],
+        "Back": [
+          {
+            "exercise": "Pull-ups (or Inverted Rows)",
+            "target": "Back/Biceps",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Superman",
+            "target": "Lower Back",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Doorway Rows",
+            "target": "Middle Back",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Scapular Retraction",
+            "target": "Upper Back",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ],
+        "Shoulders": [
+          {
+            "exercise": "Pike Push-ups",
+            "target": "Shoulders",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Handstand Wall Push-ups",
+            "target": "Shoulders",
+            "reps": "3 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Lateral Raises with Water Bottles",
+            "target": "Side Delts",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Front Raises with Water Bottles",
+            "target": "Front Delts",
+            "reps": "3 sets of 12-15 reps"
+          }
+        ],
+        "Abs": [
+          {
+            "exercise": "Bicycle Crunches",
+            "target": "Abs/Obliques",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Leg Raises",
+            "target": "Lower Abs",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Plank",
+            "target": "Core",
+            "duration": "3 sets of 30-60 seconds"
+          },
+          {
+            "exercise": "Russian Twists",
+            "target": "Obliques",
+            "reps": "3 sets of 15-20 reps each side"
+          }
+        ],
+        "Biceps": [
+          {
+            "exercise": "Chin-ups",
+            "target": "Biceps/Back",
+            "reps": "4 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Bottle Curls",
+            "target": "Biceps",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Doorway Curls",
+            "target": "Biceps",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Isometric Curls",
+            "target": "Biceps",
+            "duration": "3 sets of 30 seconds"
+          }
+        ],
+        "Triceps": [
+          {
+            "exercise": "Diamond Push-ups",
+            "target": "Triceps",
+            "reps": "4 sets of 10-15 reps"
+          },
+          {
+            "exercise": "Tricep Dips",
+            "target": "Triceps",
+            "reps": "4 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Overhead Tricep Extension (with water bottle)",
+            "target": "Long Head",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Skull Crushers (with water bottle)",
+            "target": "Triceps",
+            "reps": "3 sets of 10-15 reps"
+          }
+        ]
+      },
+      "Fat Loss": {
+        "Full Body": [
+          {
+            "exercise": "Burpees",
+            "target": "Full Body",
+            "duration": "30 seconds on, 15 seconds off, 5 rounds"
+          },
+          {
+            "exercise": "Mountain Climbers",
+            "target": "Core/Cardio",
+            "duration": "30 seconds on, 15 seconds off, 5 rounds"
+          },
+          {
+            "exercise": "Jump Squats",
+            "target": "Legs/Cardio",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Push-ups",
+            "target": "Chest/Triceps",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Jumping Jacks",
+            "target": "Full Body/Cardio",
+            "duration": "45 seconds on, 15 seconds off, 4 rounds"
+          }
+        ],
+        "Legs": [
+          {
+            "exercise": "Squat Jumps",
+            "target": "Quads/Glutes",
+            "reps": "4 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Walking Lunges",
+            "target": "Quads/Glutes",
+            "reps": "3 sets of 20 steps each leg"
+          },
+          {
+            "exercise": "High Knees",
+            "target": "Legs/Cardio",
+            "duration": "30 seconds on, 15 seconds off, 5 rounds"
+          },
+          {
+            "exercise": "Glute Bridges",
+            "target": "Glutes",
+            "reps": "3 sets of 20-25 reps"
+          },
+          {
+            "exercise": "Wall Sit",
+            "target": "Quads",
+            "duration": "3 sets of 30-60 seconds"
+          }
+        ],
+        "Chest": [
+          {
+            "exercise": "Push-up Variations",
+            "target": "Chest",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Plyo Push-ups",
+            "target": "Chest/Explosiveness",
+            "reps": "3 sets of 8-12 reps"
+          },
+          {
+            "exercise": "Up-Down Planks",
+            "target": "Chest/Core",
+            "duration": "30 seconds on, 15 seconds off, 4 rounds"
+          },
+          {
+            "exercise": "Push-up to Burpee",
+            "target": "Chest/Cardio",
+            "reps": "3 sets of 10-12 reps"
+          }
+        ],
+        "Back": [
+          {
+            "exercise": "Superman to Push-up",
+            "target": "Back/Chest",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Doorway Rows (high reps)",
+            "target": "Mid Back",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Bird Dog",
+            "target": "Back/Core",
+            "reps": "3 sets of 12-15 reps each side"
+          },
+          {
+            "exercise": "Superman",
+            "target": "Lower Back",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ],
+        "Shoulders": [
+          {
+            "exercise": "Pike Push-ups",
+            "target": "Shoulders",
+            "reps": "3 sets of 12-15 reps"
+          },
+          {
+            "exercise": "Arm Circles",
+            "target": "Shoulders",
+            "duration": "30 seconds forward, 30 seconds backward, 3 sets"
+          },
+          {
+            "exercise": "Water Bottle Lateral Raises",
+            "target": "Side Delts",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Water Bottle Front Raises",
+            "target": "Front Delts",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ],
+        "Abs": [
+          {
+            "exercise": "Mountain Climbers",
+            "target": "Core/Cardio",
+            "duration": "45 seconds on, 15 seconds off, 4 rounds"
+          },
+          {
+            "exercise": "Russian Twists",
+            "target": "Obliques",
+            "reps": "3 sets of 20 reps each side"
+          },
+          {
+            "exercise": "Plank",
+            "target": "Core",
+            "duration": "3 sets of 45-60 seconds"
+          },
+          {
+            "exercise": "Bicycle Crunches",
+            "target": "Abs/Obliques",
+            "reps": "3 sets of 20-30 reps"
+          }
+        ],
+        "Biceps": [
+          {
+            "exercise": "Water Bottle Curls (high reps)",
+            "target": "Biceps",
+            "reps": "3 sets of 20-25 reps"
+          },
+          {
+            "exercise": "Towel Curls",
+            "target": "Biceps/Grip",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Isometric Curls (with household items)",
+            "target": "Biceps",
+            "duration": "3 sets of 30-45 seconds"
+          },
+          {
+            "exercise": "Chin-ups (if available)",
+            "target": "Biceps/Back",
+            "reps": "3 sets of max reps"
+          }
+        ],
+        "Triceps": [
+          {
+            "exercise": "Diamond Push-ups",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Tricep Dips",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Overhead Tricep Extension (with water bottle)",
+            "target": "Long Head",
+            "reps": "3 sets of 15-20 reps"
+          },
+          {
+            "exercise": "Close-grip Push-ups",
+            "target": "Triceps",
+            "reps": "3 sets of 15-20 reps"
+          }
+        ]
+      }
+    }
+  }
