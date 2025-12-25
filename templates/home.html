@@ -13,13 +13,60 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     
 </head>
+
+
+<body>
+    
+<!-- TOAST -->
 <div id="toast" class="toast">
     <div class="toast-icon">
         <i class="fas fa-info"></i>
     </div>
     <span id="toast-message">Notification</span>
 </div>
-<body>
+
+<!-- FLOATING CHATBOT -->
+<div class="chat-floating">
+    <div id="chatbot-btn" onclick="toggleChatbot()">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <div id="chatbot-popup" class="chat-container">
+      <div class="chat-header">
+    <div class="header-left">
+        <div class="bot-icon">🤖</div>
+        <div class="bot-info">
+            <span class="bot-name">ZYM AI</span>
+            <small class="bot-status">Online</small>
+        </div>
+    </div>
+
+    <button class="close-btn" onclick="toggleChatbot()">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+
+
+        <div id="chatbox" class="chat-box">
+            <div class="message bot">
+                <div class="bubble">
+                    Halo 👋<br>
+                    Saya <b>ZYM AI</b>, asisten fitness kamu 
+                    Ada yang bisa saya bantu?
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ketik pesan..." />
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
     <!-- Loading Screen -->
     <div class="loader" id="loader">
         <div class="loader-circle"></div>
@@ -38,18 +85,17 @@
    <!-- Navigation -->
 <nav id="navbar">
     <div class="nav-container">
-        <div class="logo">
-            <img src="static\images\Desain tanpa judul-modified.png" alt="ZYM Logo" style="height:40px; margin-right:10px;">
-            Zym Ai Mobile
-        </div>
+          <div class="logo">
+    <img src="{{ url_for('static', filename='img/LOGO.png') }}"
+         alt="ZYM Logo"
+         style="height:40px; margin-right:10px;">ZYM AI MOBILE
+</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#about">ABOUT</a></li>
             <li><a href="#TESTIMONI">testimonial</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-         <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+          <a href="{{ url_for('logout') }}" class="nav-cta">Log Out</a>
 
 
         <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -66,7 +112,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <span class="hero-badge">CAPSTONE PROJECT</span>
-                <h1>Elevate Your Fitness Journey with<h1>
+                <h1>SELAMAT DATANG<h1>
                 <h1><span class="gradient-text"> Virtual Asisten Trainer Gym Digital</span></h1>
                 <p>ZYM AI menghadirkan pelatih gym digital berbasis kecerdasan buatan yang mampu memonitor gerakan, memberikan koreksi secara real-time, serta mempersonalisasi latihan Anda. Solusi modern untuk latihan yang lebih aman, efektif, dan efisien.</p>
                 <div class="hero-buttons">
@@ -171,19 +217,17 @@
 </svg>
 
 <div class="container">
-    <div class="left-panel">
-        {% include 'workout_suggestion.html' %}
+    <div >
+        {% include 'bmi.html' %}
     </div>
 
-    <div class="right-panel">
-        {% include 'chatbot.html' %}
-    </div>
 </div>
 
 
 <!-- FEEDBACK RESULT SECTION -->
 <section class="feedback-result group" id="feedbackResult">
-    <div class="container">
+    <div class="container feedback-wrapper-main">
+
         <div class="section-header">
             <h2>USER <span class="gradient-text"> FEEDBACK</span></h2>
             <p>All feedback submitted will appear here in real-time</p>
@@ -258,10 +302,11 @@
                 <textarea id="message" rows="5" placeholder="Write your feedback here..."></textarea>
             </div>
 
-            <button type="submit" class="btn-primary"onclick="showToast('LOGIN TERLEBIH DAHULU')">
-                Submit Feedback  
-                <i class="fas fa-paper-plane"></i>
-            </button>
+          <button type="submit" class="btn-primary">
+    Submit Feedback  
+    <i class="fas fa-paper-plane"></i>
+</button>
+
         </form>
     </div>
 </section>
@@ -314,13 +359,7 @@
     </footer>
 
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <div class="toast-icon">
-            <i class="fas fa-check"></i>
-        </div>
-        <div class="toast-message" id="toastMessage">Action completed!</div>
-    </div>
+
 
     <script>
         // Loader
@@ -681,6 +720,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupStats();
 });
+
+function toggleChatbot() {
+    const popup = document.getElementById("chatbot-popup");
+    popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+}
+
+function sendMessage() {
+    const input = document.getElementById("userInput");
+    const message = input.value.trim();
+    if (!message) return;
+
+    const chatbox = document.getElementById("chatbox");
+
+    // USER MESSAGE
+    chatbox.insertAdjacentHTML("beforeend", `
+        <div class="message user">
+            <div class="bubble">${message}</div>
+        </div>
+    `);
+
+    chatbox.scrollTop = chatbox.scrollHeight;
+    input.value = "";
+
+    fetch("/send_message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+    })
+    .then(res => res.json())
+    .then(data => {
+        // BOT MESSAGE
+        chatbox.insertAdjacentHTML("beforeend", `
+            <div class="message bot">
+                <div class="bubble">${data.response}</div>
+            </div>
+        `);
+
+        chatbox.scrollTop = chatbox.scrollHeight;
+    });
+}
 
     </script>
 </body>

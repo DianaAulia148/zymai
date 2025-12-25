@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Signup | Fitness Chatbot</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 </head>
 <body>
+
+<div class="login-wrapper">
     <div class="center">
         <h1>Signup</h1>
 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- SIGNUP MANUAL -->
         <form method="post" action="{{ url_for('signup') }}">
             <div class="txt_field">
                 <input type="text" name="username" required>
@@ -30,11 +49,65 @@
             </div>
 
             <input type="submit" value="Signup">
-            <a href="{{ url_for('login_google') }}" class="google-btn">
-    Signup with Google
-</a>
-
         </form>
+
+        <!-- SIGNUP GOOGLE -->
+        <div class="google-login">
+            <button onclick="signupWithGoogle()" class="google-btn">
+                Signup with Google
+            </button>
+        </div>
+
+        <div class="signup_link">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
     </div>
+</div>
+
+
+<script>
+    // 🔥 FIREBASE CONFIG (ISI DARI FIREBASE CONSOLE)
+     const firebaseConfig = {
+        apiKey: "AIzaSyDEhe1AF95myrhDF5vKAYE_smNWt3lSW0A",
+        authDomain: "capstonezym-11b3e.firebaseapp.com",
+        projectId: "capstonezym-11b3e",
+        appId: "1:588891346024:web:ef2b764f0641ccd1e197dd"
+    };
+
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    function signupWithGoogle() {
+        auth.signInWithPopup(provider)
+            .then(async (result) => {
+                const idToken = await result.user.getIdToken();
+
+                const res = await fetch("/login/firebase", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ idToken })
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    window.location.href = "/home";
+                } else {
+                    alert(data.error || "Signup Google gagal");
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("Signup Google gagal");
+            });
+    }
+</script>
+
 </body>
 </html>

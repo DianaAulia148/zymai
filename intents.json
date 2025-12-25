@@ -1,0 +1,161 @@
+{
+  "intents": [
+   {
+    "tag": "info_app_zym",
+    "patterns": [
+      "Apa itu ZYM AI?",
+      "ZYM AI itu aplikasi apa?",
+      "Jelaskan aplikasi ZYM AI",
+      "Fungsi aplikasi ZYM AI apa?"
+    ],
+    "responses": [
+      "ZYM AI adalah aplikasi pelatih gym digital berbasis kecerdasan buatan yang membantu memonitor gerakan latihan, memberikan koreksi secara real-time, serta mempersonalisasi program latihan agar lebih aman, efektif, dan efisien."
+    ]
+  },
+  {
+    "tag": "fitur_app_zym",
+    "patterns": [
+      "Fitur ZYM AI apa saja?",
+      "Apa keunggulan aplikasi ZYM AI?",
+      "ZYM AI bisa apa?",
+      "Manfaat menggunakan ZYM AI?"
+    ],
+    "responses": [
+      "ZYM AI memiliki fitur monitoring gerakan, koreksi latihan real-time, rekomendasi latihan personal, serta panduan latihan yang aman dan efisien."
+    ]
+  },
+  {
+    "tag": "monitoring_gerakan",
+    "patterns": [
+      "Bagaimana ZYM AI memonitor gerakan?",
+      "Apakah ZYM AI bisa memantau latihan?",
+      "Monitoring gerakan di ZYM AI",
+      "ZYM AI cek gerakan latihan?"
+    ],
+    "responses": [
+      "ZYM AI memanfaatkan teknologi kecerdasan buatan untuk memonitor gerakan latihan dan membantu memastikan teknik dilakukan dengan benar."
+    ]
+  },
+  {
+    "tag": "koreksi_realtime",
+    "patterns": [
+      "Apakah ZYM AI memberi koreksi latihan?",
+      "Koreksi gerakan secara real time?",
+      "ZYM AI bisa mengoreksi gerakan?",
+      "Bagaimana koreksi latihan di ZYM AI?"
+    ],
+    "responses": [
+      "ZYM AI memberikan koreksi gerakan secara real-time untuk membantu mengurangi kesalahan latihan dan mencegah cedera."
+    ]
+  },
+  {
+    "tag": "personalisasi_latihan",
+    "patterns": [
+      "Apakah latihan di ZYM AI bisa dipersonalisasi?",
+      "Latihan sesuai kebutuhan di ZYM AI?",
+      "Program latihan personal ZYM AI",
+      "ZYM AI menyesuaikan latihan?"
+    ],
+    "responses": [
+      "ZYM AI mempersonalisasi program latihan berdasarkan tujuan, kemampuan, dan progres pengguna."
+    ]
+  },
+  {
+    "tag": "info_gym",
+    "patterns": [
+      "Apa itu gym?",
+      "Fungsi gym apa?",
+      "Jelaskan gym",
+      "Gym itu tempat apa?"
+    ],
+    "responses": [
+      "Gym adalah tempat latihan kebugaran untuk meningkatkan kesehatan, kekuatan, dan daya tahan tubuh. Dengan ZYM AI, latihan di gym menjadi lebih aman dan terarah."
+    ]
+  },
+  {
+    "tag": "latihan_kardio",
+    "patterns": [
+      "Apa itu latihan kardio?",
+      "Latihan untuk jantung?",
+      "Jenis latihan kardio di gym",
+      "Kardio apa saja di gym?"
+    ],
+    "responses": [
+      "Latihan kardio meningkatkan kesehatan jantung dan stamina, seperti treadmill dan sepeda statis. ZYM AI membantu memilih latihan kardio sesuai tujuan Anda."
+    ]
+  },
+  {
+    "tag": "latihan_beban",
+    "patterns": [
+      "Latihan angkat beban?",
+      "Bagaimana cara membentuk otot?",
+      "Latihan beban di gym",
+      "Angkat beban apa yang baik?"
+    ],
+    "responses": [
+      "Latihan beban membantu membentuk dan memperkuat otot. ZYM AI membantu memastikan teknik dan beban tetap aman."
+    ]
+  },
+  {
+    "tag": "pemula_gym",
+    "patterns": [
+      "Tips pemula gym?",
+      "Bagaimana mulai gym?",
+      "Pemula di gym?",
+      "Mau coba gym pertama kali?"
+    ],
+    "responses": [
+      "Pemula disarankan memulai latihan ringan dan memahami teknik dasar. ZYM AI siap menjadi pelatih digital pendamping Anda."
+    ]
+  },
+  {
+    "tag": "cedera_gym",
+    "patterns": [
+      "Bagaimana menghindari cedera gym?",
+      "Cedera saat latihan?",
+      "Risiko latihan gym?",
+      "Latihan aman di gym?"
+    ],
+    "responses": [
+      "Cedera sering terjadi akibat teknik yang salah. ZYM AI membantu meminimalkan risiko cedera dengan koreksi gerakan real-time."
+    ]
+  },
+  {
+    "tag": "program_latihan",
+    "patterns": [
+      "Bagaimana program latihan gym?",
+      "Program latihan untuk pemula?",
+      "Cara buat program gym?",
+      "Program gym terbaik?"
+    ],
+    "responses": [
+      "Program latihan disusun berdasarkan tujuan seperti menurunkan berat badan atau membentuk otot, dan ZYM AI membantu mengatur program tersebut secara personal."
+    ]
+  },
+  {
+    "tag": "konsistensi_latihan",
+    "patterns": [
+      "Kenapa konsisten penting?",
+      "Latihan rutin itu penting?",
+      "Disiplin di gym?",
+      "Latihan teratur apa hasilnya?"
+    ],
+    "responses": [
+      "Konsistensi latihan adalah kunci hasil maksimal. ZYM AI membantu menjaga konsistensi dengan panduan dan evaluasi latihan."
+    ]
+  },
+  {
+    "tag": "rekomendasi_makanan_diet",
+    "patterns": [
+      "Makanan apa yang bagus untuk diet?",
+      "Rekomendasi makanan diet?",
+      "Apa yang harus dimakan saat diet?",
+      "Menu diet untuk gym?",
+      "Makanan sehat untuk menurunkan berat badan?"
+    ],
+    "responses": [
+      "Untuk diet sehat, disarankan mengonsumsi makanan tinggi protein seperti dada ayam, telur, ikan, serta sayur dan karbohidrat kompleks. ZYM AI dapat membantu menyesuaikan rekomendasi makanan dengan tujuan latihan Anda."
+    ]
+  }
+  ]
+}

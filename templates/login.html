@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 </head>
+
 <body>
+
+<div class="login-wrapper">
     <div class="center">
         <h1>Login</h1>
+        <div id="notif" class="alert" style="display:none;"></div>
 
+        <!-- LOGIN MANUAL -->
         <form method="post" action="{{ url_for('login') }}">
             <div class="txt_field">
                 <input type="text" name="username" required>
@@ -20,21 +30,76 @@
             </div>
 
             <input type="submit" value="Login">
-            <div class="google-login">
-    <a href="{{ url_for('login_google') }}" class="google-btn">
-        <i class="fa-brands fa-google"></i> Login with Google
-    </a>
+        </form>
+
+       <button type="button" onclick="loginWithGoogle()" class="google-btn">
+    <i class="fa-brands fa-google"></i>
+    Login with Google
+</button>
+
+
+        <div class="pass">
+            <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
+        </div>
+
+        <div class="signup_link">
+            Not a member? <a href="{{ url_for('signup') }}">Signup</a>
+        </div>
+    </div>
 </div>
 
 
-            <div class="pass">
-                <a href="{{ url_for('forgot_password') }}">Forgot Password?</a>
-            </div>
 
-            <div class="signup_link">
-                Not a member? <a href="{{ url_for('signup') }}">Signup</a>
-            </div>
-        </form>
-    </div>
+
+<script>
+    // 🔥 FIREBASE CONFIG (GANTI SESUAI PROJECT KAMU)
+    const firebaseConfig = {
+        apiKey: "AIzaSyDEhe1AF95myrhDF5vKAYE_smNWt3lSW0A",
+        authDomain: "capstonezym-11b3e.firebaseapp.com",
+        projectId: "capstonezym-11b3e",
+        appId: "1:588891346024:web:ef2b764f0641ccd1e197dd"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    function showError(message) {
+    const notif = document.getElementById("notif");
+    notif.textContent = message;
+    notif.className = "alert error";
+    notif.style.display = "block";
+}
+
+function loginWithGoogle() {
+    auth.signInWithPopup(provider)
+        .then(async (result) => {
+            const idToken = await result.user.getIdToken(true);
+
+            const res = await fetch("/login/firebase", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ idToken })
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                window.location.href = "/home";
+            } else {
+                showError(data.error);
+            }
+        })
+        .catch((error) => {
+            showError("Login Google gagal. Silakan coba lagi.");
+            console.error(error);
+        });
+}
+
+</script>
+
 </body>
 </html>

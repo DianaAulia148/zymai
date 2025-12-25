@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator BMI</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<!-- BMI MODAL -->
+<div id="bmiModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Hasil BMI Kamu</h2>
+        <p class="bmi-number" id="modalBmi"></p>
+        <span class="bmi-category" id="modalCategory"></span>
+
+        <h4>Rekomendasi Workout</h4>
+        <ul id="workoutList"></ul>
+    </div>
+</div>
+
+<body>
+<section class="bmi-wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="bmi-info">
+        <img src="{{ url_for('static', filename='img/1.png') }}" class="bmi-image">
+
+        <h2>Tentang BMI</h2>
+        <p>
+            <strong>Body Mass Index (BMI)</strong> membantu menentukan apakah berat badan
+            kamu ideal sesuai dengan tinggi badan.
+        </p>
+        <p>
+            Hasilnya dapat memberikan gambaran awal tentang kondisi tubuhmu
+            dan menjadi dasar untuk menjaga atau memperbaiki pola hidup.
+        </p>
+
+        <a href="#" class="link-more">Lihat Selengkapnya</a>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="bmi-card">
+        <h3>Kalkulator BMI</h3>
+        <p class="subtitle">
+            Ingin tahu apakah berat badan kamu sudah ideal?
+            Yuk, hitung BMI kamu sekarang!
+        </p>
+
+        <!-- GENDER -->
+        <label>* Pilih Gender</label>
+        <div class="gender-box">
+           <label class="gender-card" for="male">
+    <input type="radio" id="male" name="gender" value="male">
+    <img src="{{ url_for('static', filename='img/male.jpg') }}">
+    <span>Laki-laki</span>
+</label>
+
+<label class="gender-card" for="female">
+    <input type="radio" id="female" name="gender" value="female">
+    <img src="{{ url_for('static', filename='img/female.jpg') }}">
+    <span>Perempuan</span>
+</label>
+
+        </div>
+
+        <!-- HEIGHT -->
+        <label>* Tinggi Badan</label>
+        <div class="input-group">
+            <input type="number" id="height" placeholder="Contoh: 150">
+            <span>cm</span>
+        </div>
+
+        <!-- WEIGHT -->
+        <label>* Berat Badan</label>
+        <div class="input-group">
+            <input type="number" id="weight" placeholder="Contoh: 50">
+            <span>kg</span>
+        </div>
+
+        <button onclick="calculateBMI()">Hitung BMI</button>
+
+        <!-- RESULT -->
+        <div id="result" class="result-box" style="display:none;">
+            <h4>BMI Kamu</h4>
+            <p id="bmiValue"></p>
+            <span id="bmiCategory"></span>
+        </div>
+    </div>
+
+</section>
+
+<script>
+function calculateBMI() {
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const gender = document.querySelector("input[name='gender']:checked");
+
+    if (!gender || !height || !weight) {
+        alert("Pilih gender dan isi tinggi & berat badan");
+        return;
+    }
+
+    fetch("/bmi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            height: height,
+            weight: weight,
+            gender: gender.value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("modalBmi").innerText = data.bmi;
+        document.getElementById("modalCategory").innerText = data.category;
+
+        const list = document.getElementById("workoutList");
+        list.innerHTML = "";
+        data.recommendation.forEach(item => {
+            list.innerHTML += `<li>${item}</li>`;
+        });
+
+        openModal();
+    })
+    .catch(() => alert("Terjadi kesalahan server"));
+}
+
+function openModal() {
+    document.getElementById("bmiModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("bmiModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

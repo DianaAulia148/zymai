@@ -36,10 +36,12 @@
    <!-- Navigation -->
 <nav id="navbar">
     <div class="nav-container">
-        <div class="logo">
-            <img src="static\images\Desain tanpa judul-modified.png" alt="ZYM Logo" style="height:40px; margin-right:10px;">
-            Zym Ai Mobile
-        </div>
+      <div class="logo">
+    <img src="{{ url_for('static', filename='img/LOGO.png') }}"
+         alt="ZYM Logo"
+         style="height:40px; margin-right:10px;">ZYM AI MOBILE
+</div>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#features">Features</a></li>
@@ -210,7 +212,7 @@ Latihan kapan saja, di mana saja, bersama pelatih digital yang selalu siap menda
         <!-- MOCKUP PHONE -->
         <div class="hero-right">
             <div class="phone float" id="mockupPhone">
-                <img src="static\images\ZYM.jpg" alt="GemZ mobile mockup">
+                <img src="{{ url_for('static', filename='img/ZYM.jpg') }}" alt="GemZ mobile mockup">
             </div>
         </div>
 
@@ -280,10 +282,10 @@ Latihan kapan saja, di mana saja, bersama pelatih digital yang selalu siap menda
             <!-- Team 1 -->
             <div class="team-card">
                 <div class="team-img">
-                    <img src="static\images\images\Desain tanpa judul-modified.png" alt="Team Member">
+                   <img src="{{ url_for('static', filename='img/profil.jpg') }}" alt="Team Member">
                 </div>
-                <h3>Zechary Carls</h3>
-                <p>Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p>
+                <h3>DIANA AULIA</h3>
+                <p>23090148</p>
                 <a href="mailto:email@gmail.com">email@gmail.com</a>
                 <div class="team-social">
                     <i class="fab fa-facebook-f"></i>
@@ -295,10 +297,10 @@ Latihan kapan saja, di mana saja, bersama pelatih digital yang selalu siap menda
             <!-- Team 2 -->
             <div class="team-card">
                 <div class="team-img">
-                    <img src="static\images\images\Desain tanpa judul-modified.png" alt="Team Member">
+ <img src="{{ url_for('static', filename='img/profil.jpg') }}" alt="Team Member">
                 </div>
-                <h3>Zechary Carls</h3>
-                <p>Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p>
+                <h3>KHOLILA RISTIANA</h3>
+                <p>23090023</p>
                 <a href="mailto:name@gmail.com">name@gmail.com</a>
                 <div class="team-social">
                     <i class="fab fa-facebook-f"></i>
@@ -310,10 +312,10 @@ Latihan kapan saja, di mana saja, bersama pelatih digital yang selalu siap menda
             <!-- Team 3 -->
             <div class="team-card">
                 <div class="team-img">
-                    <img src="static\images\images\Desain tanpa judul-modified.png" alt="Team Member">
+                    <img src="{{ url_for('static', filename='img/profil.jpg') }}" alt="Team Member">
                 </div>
-                <h3>Zechary Carls</h3>
-                <p>Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p>
+                <h3>SALSABILA RAMADHANI</h3>
+                <p>23090097</p>
                 <a href="mailto:firstlastname@gmail.com">firstlastname@gmail.com</a>
                 <div class="team-social">
                     <i class="fab fa-facebook-f"></i>
@@ -325,10 +327,10 @@ Latihan kapan saja, di mana saja, bersama pelatih digital yang selalu siap menda
             <!-- Team 4 -->
             <div class="team-card">
                 <div class="team-img">
-                    <img src="static\images\images\Desain tanpa judul-modified.png" alt="Team Member">
+                     <img src="{{ url_for('static', filename='img/profil.jpg') }}" alt="Team Member">
                 </div>
-                <h3>Zechary Carls</h3>
-                <p>Lorem Ipsum is a simply dummy text of the printing and typesetting industry.</p>
+                <h3>ANAS TASYA RAMADHANI</h3>
+                <p>23090015</p>
                 <a href="mailto:team@gmail.com">team@gmail.com</a>
                 <div class="team-social">
                     <i class="fab fa-facebook-f"></i>
@@ -616,26 +618,35 @@ document.querySelector('.feedback-form').addEventListener('submit', function (e)
     }
 
     // 2️⃣ CEK LOGIN (SETELAH FORM LENGKAP)
-    const isLoggedIn = {{ 'true' if session.get('user_id') else 'false' }};
+   const isLoggedIn = {{ 'true' if session.get('user_id') is not none else 'false' }};
+
     if (!isLoggedIn) {
         showToast('LOGIN TERLEBIH DAHULU');
         return;
     }
 
     // 3️⃣ SUBMIT FEEDBACK
-    fetch('/api/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message, rating })
-    })
-    .then(res => res.json())
-    .then(res => {
-        showToast(res.message || 'Feedback berhasil dikirim');
-        document.querySelector('.feedback-form').reset();
-    })
-    .catch(() => {
-        showToast('Terjadi kesalahan, silakan coba lagi');
-    });
+    fetch("/api/feedback", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+})
+.then(res => {
+    if (res.status === 401) {
+        alert("Silakan login terlebih dahulu untuk mengirim feedback");
+        window.location.href = "/login";
+        return;
+    }
+    return res.json();
+})
+.then(data => {
+    if (data) {
+        alert(data.message);
+    }
+});
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {
